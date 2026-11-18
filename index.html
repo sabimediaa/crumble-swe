@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Exempelstäd – Hemstädning, kontorsstädning, flyttstädning och fönsterputs</title>
+<meta name="description" content="Hemstädning, kontorsstädning, flyttstädning och fönsterputs i Staden. Fast städare, städmaterial ingår, kollektivavtal och kvalitetsgaranti. Räkna ut ditt pris med RUT direkt.">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="canonical" href="https://www.exempelstad.se/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.exempelstad.se/">
+<meta property="og:title" content="Exempelstäd – städning du kan lita på">
+<meta property="og:description" content="Fast städare, städmaterial ingår och kvalitetsgaranti. Räkna ut ditt pris direkt.">
+<meta property="og:locale" content="sv_SE">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/a11y.css">
+</head>
+<body>
+<div class="demo-bar" id="demo-bar" hidden>Demo: företaget, recensionerna och siffrorna är exempel. Formulären skickar inget.</div>
+<a class="skip" href="#main">Hoppa till innehållet</a>
+<noscript><p class="noscript">Sidan behöver JavaScript för att visa allt innehåll. Ring oss på 08-123 45 67 eller mejla hej@exempelstad.se.</p></noscript>
+
+<header class="top">
+  <div class="wrap navbar">
+    <a class="brand" href="#hem"><span class="logo" data-icon="sparkle" aria-hidden="true"></span><span data-site="name">Exempelstäd</span></a>
+    <nav class="navlinks" aria-label="Huvudmeny">
+      <a href="#hem">Hem</a>
+      <a href="#tjanster">Tjänster</a>
+      <a href="#pris">Räkna pris</a>
+      <a href="#referenser">Referenser</a>
+      <a href="#om-oss">Om oss</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="search-btn" type="button" id="search-open" aria-label="Sök på sidan"><span data-icon="search" aria-hidden="true"></span><span class="lbl">Sök</span></button>
+      <a class="call-pill" data-phone-link data-phone-label><span data-icon="phone"></span><span class="lbl" data-site="phone"></span></a>
+      <a class="btn btn-brand btn-sm" href="#kontakt?typ=offert">Få offert</a>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- ================= HEM ================= -->
+<section class="view" data-view="hem">
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Hemstädning · Kontorsstädning · Flyttstädning · Fönsterputs</span>
+        <h1>Kom hem till ett <em>rent</em> hem – varje gång</h1>
+        <p>Fast städare, städmaterial ingår och garanti på allt vi gör. Du betalar bara halva arbetskostnaden med RUT.</p>
+        <div class="hero-actions">
+          <a class="btn btn-ink" href="#pris">Räkna ut ditt pris <span aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost" href="#kontakt?typ=prov">Boka provstädning <span data-trial-price></span></a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="hero-illus" data-scene="hero"></div>
+        <div class="price-badge"><span>RUT-avdrag</span><strong>−50%</strong><span>direkt på fakturan</span></div>
+      </div>
+    </div>
+    <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"></svg>
+  </div>
+
+  <div class="usp-bar"><ul class="wrap usp-list" id="usps"></ul></div>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="stats" id="stats"></div>
+    </div>
+  </section>
+
+  <section class="sec mist">
+    <div class="wrap">
+      <div class="section-head">
+        <div><span class="eyebrow">Erbjudanden</span><h2>Just nu hos oss</h2></div>
+        <a class="link-arrow" href="#kontakt?typ=offert">Fråga om erbjudandet</a>
+      </div>
+      <div class="offers" id="offers"></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="section-head">
+        <div><span class="eyebrow">Därför väljer kunderna oss</span><h2 data-site="reasonsTitle"></h2></div>
+      </div>
+      <div class="reasons" id="reasons"></div>
+    </div>
+  </section>
+
+  <section class="sec mist">
+    <div class="wrap">
+      <div class="section-head">
+        <div><span class="eyebrow">Tjänster</span><h2>Vad vill du ha städat?</h2></div>
+        <a class="link-arrow" href="#tjanster">Alla tjänster</a>
+      </div>
+      <div class="svc-grid" id="svc-home"></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <span class="eyebrow">Så funkar det</span>
+      <h2 class="h2">Bokat på tre minuter</h2>
+      <ol class="steps">
+        <li><span class="n">01</span><h3>Räkna ut priset</h3><p>Välj tjänst, storlek och hur ofta. Du ser priset med RUT direkt.</p></li>
+        <li><span class="n">02</span><h3>Vi ringer upp</h3><p>Vi bekräftar tid, nyckel och önskemål – samma dag på vardagar.</p></li>
+        <li><span class="n">03</span><h3>Kom hem till rent</h3><p>Din fasta städare kommer. Inte nöjd? Vi kommer tillbaka gratis.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec mist">
+    <div class="wrap">
+      <div class="section-head">
+        <div><span class="eyebrow">Recensioner</span><h2>Vad kunderna säger</h2><p class="hint" id="rating-line"></p></div>
+        <a class="btn btn-ink" href="#pris">Bli nästa nöjda kund <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="reviews" id="reviews-home"></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="trial" id="trial"></div>
+    </div>
+  </section>
+
+  <section class="sec mist">
+    <div class="wrap">
+      <div class="section-head"><div><span class="eyebrow">Hitta oss</span><h2>Öppettider och kontor</h2></div></div>
+      <div class="info-cards" id="info-cards"></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="band">
+        <div>
+          <h2>Vill du hellre <em>prata</em> med någon?</h2>
+          <p>Lämna ditt nummer så ringer vi upp inom en arbetsdag och ger ett fast pris.</p>
+        </div>
+        <div class="band-actions">
+          <a class="btn btn-brand" href="#kontakt?typ=ring">Bli uppringd</a>
+          <a class="btn btn-ghost-light" data-phone-link>Ring <span data-site="phone"></span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ================= TJÄNSTER ================= -->
+<section class="view" data-view="tjanster" hidden>
+  <div class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Tjänster</span>
+      <h1>Städning för <em>hem</em> och företag</h1>
+      <p>Alla priser inkluderar städmaterial, försäkring och kvalitetsgaranti. Klicka på en tjänst för att se vad som ingår.</p>
+      <div class="deco" aria-hidden="true" data-scene="spray"></div>
+    </div>
+    <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"></svg>
+  </div>
+  <section class="sec tight">
+    <div class="wrap">
+      <div class="svc-list" id="svc-list"></div>
+    </div>
+  </section>
+</section>
+
+<!-- ================= PRIS ================= -->
+<section class="view" data-view="pris" hidden>
+  <div class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Priskalkyl</span>
+      <h1>Räkna ut ditt <em>pris</em></h1>
+      <p>Fem snabba steg. Du ser priset före och efter RUT – och kan boka direkt.</p>
+      <div class="deco" aria-hidden="true" data-scene="calc"></div>
+    </div>
+    <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"></svg>
+  </div>
+  <section class="sec tight">
+    <div class="wrap calc-grid">
+      <div class="calc">
+        <ol class="calc-progress" id="calc-progress" aria-label="Steg i priskalkylen"></ol>
+        <div class="calc-step" id="calc-step"></div>
+        <div class="calc-nav">
+          <button class="btn btn-ghost-dark" id="calc-back" type="button">← Tillbaka</button>
+          <button class="btn btn-ink" id="calc-next" type="button">Nästa →</button>
+        </div>
+      </div>
+      <aside class="summary" id="calc-summary" aria-label="Ditt pris"></aside>
+      <p class="sr-only" id="calc-live" aria-live="polite"></p>
+    </div>
+  </section>
+</section>
+
+<!-- ================= REFERENSER ================= -->
+<section class="view" data-view="referenser" hidden>
+  <div class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Referenser</span>
+      <h1>Se vad vi har <em>städat</em></h1>
+      <p>Ett urval av uppdrag – från ettor i stan till kontor och trapphus.</p>
+      <div class="deco" aria-hidden="true" data-scene="star"></div>
+    </div>
+    <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"></svg>
+  </div>
+  <section class="sec tight">
+    <div class="wrap">
+      <div class="section-head">
+        <div><span class="eyebrow">Galleri</span><h2>Referensprojekt</h2></div>
+        <div class="filters" id="gal-filters"></div>
+      </div>
+      <div class="gallery" id="gallery"></div>
+    </div>
+  </section>
+  <section class="sec mist">
+    <div class="wrap">
+      <div class="section-head">
+        <div><span class="eyebrow">Recensioner</span><h2>Omdömen från kunder</h2><p class="hint" id="rating-line-2"></p></div>
+        <a class="btn btn-ink" href="#pris">Bli nästa nöjda kund <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="reviews" id="reviews-all"></div>
+    </div>
+  </section>
+</section>
+
+<!-- ================= OM OSS ================= -->
+<section class="view" data-view="om-oss" hidden>
+  <div class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Om oss</span>
+      <h1>Städning med <em>schyssta</em> villkor</h1>
+      <p data-site="area"></p>
+      <div class="deco" aria-hidden="true" data-scene="heart"></div>
+    </div>
+    <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"></svg>
+  </div>
+  <section class="sec tight">
+    <div class="wrap about">
+      <div class="about-text" id="about-text"></div>
+      <div class="about-art" data-scene="team" aria-hidden="true"></div>
+    </div>
+  </section>
+  <section class="sec mist">
+    <div class="wrap">
+      <span class="eyebrow">Våra värderingar</span>
+      <h2 class="h2">Det här står vi för</h2>
+      <div class="values" id="values"></div>
+    </div>
+  </section>
+  <section class="sec">
+    <div class="wrap">
+      <div class="section-head">
+        <div><span class="eyebrow">Personalen</span><h2>Våra medarbetares rättigheter</h2><p class="hint">Bra städning kräver schyssta villkor. Så här har våra anställda det.</p></div>
+      </div>
+      <div class="rights" id="rights"></div>
+    </div>
+  </section>
+  <section class="sec mist" id="office-sec">
+    <div class="wrap">
+      <div class="section-head">
+        <div><span class="eyebrow">Hitta hit</span><h2 id="office-title">Här finns vi</h2></div>
+      </div>
+      <div class="map-grid">
+        <div class="map" id="map"></div>
+        <div class="map-info" id="map-info"></div>
+      </div>
+    </div>
+  </section>
+  <section class="sec">
+    <div class="wrap">
+      <div class="section-head"><div><span class="eyebrow">Vanliga frågor</span><h2>Bra att veta</h2></div></div>
+      <div class="faq" id="faq"></div>
+    </div>
+  </section>
+</section>
+
+<!-- ================= KONTAKT ================= -->
+<section class="view" data-view="kontakt" hidden>
+  <div class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Kontakt</span>
+      <h1>Få en <em>offert</em> eller bli uppringd</h1>
+      <p>Välj hur du vill bli kontaktad. Vi svarar inom en arbetsdag och du får en bekräftelse på mejlen direkt.</p>
+      <div class="deco" aria-hidden="true" data-scene="phone"></div>
+    </div>
+    <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"></svg>
+  </div>
+  <section class="sec tight">
+    <div class="wrap contact">
+      <div class="contact-side">
+        <div class="cinfo" id="cinfo"></div>
+        <div class="social-card" id="social-card"></div>
+      </div>
+      <div class="form-card">
+        <div class="tabs" id="form-tabs" role="group" aria-label="Välj typ av förfrågan">
+          <button type="button" data-type="offert" aria-pressed="false">Offert</button>
+          <button type="button" data-type="prov" aria-pressed="false">Provstädning</button>
+          <button type="button" data-type="ring" aria-pressed="false">Ring upp mig</button>
+          <button type="button" data-type="kontakt" aria-pressed="false">Kontakt</button>
+        </div>
+        <form class="form" id="lead-form" novalidate aria-describedby="req-note"></form>
+        <p class="req-note" id="req-note">Fält märkta med <span aria-hidden="true">*</span><span class="sr-only">stjärna</span> måste fyllas i.</p>
+      </div>
+    </div>
+  </section>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <h2>Ett renare hem, <em>utan</em> krångel.</h2>
+        <div class="socials" id="foot-socials"></div>
+      </div>
+      <div class="foot-col">
+        <span class="eyebrow">Tjänster</span>
+        <div id="foot-services"></div>
+      </div>
+      <div class="foot-col">
+        <span class="eyebrow">Sidor</span>
+        <a href="#pris">Räkna pris</a><a href="#referenser">Referenser</a><a href="#om-oss">Om oss</a><a href="#kontakt">Kontakt</a>
+      </div>
+      <div class="foot-col" id="foot-contact">
+        <span class="eyebrow">Kontakt & öppettider</span>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> <span data-site="name"></span> · F-skattsedel · Ansvarsförsäkring</span>
+      <span class="foot-links"><button class="motion-toggle" type="button" data-motion-toggle aria-pressed="false">Pausa rörelse</button><a href="#kontakt?typ=offert">Få offert <span aria-hidden="true">→</span></a></span>
+    </div>
+  </div>
+</footer>
+
+<a class="sticky-cta" href="#pris">Räkna pris</a>
+
+<dialog class="info" id="svc-dialog" aria-labelledby="svc-dlg-title"></dialog>
+<dialog class="search" id="search-dlg" aria-label="Sök på sidan">
+  <div class="search-box"><span data-icon="search" aria-hidden="true"></span><label class="sr-only" for="search-q">Sök på sidan</label><input type="search" id="search-q" placeholder="Sök tjänst, pris, RUT, öppettider…" autocomplete="off"><button class="search-close" type="button" aria-label="Stäng sökningen">Esc</button></div>
+  <p class="sr-only" id="search-live" aria-live="polite"></p>
+  <div class="search-res" id="search-res"></div>
+</dialog>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

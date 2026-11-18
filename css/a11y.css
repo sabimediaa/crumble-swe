@@ -1,0 +1,122 @@
+/* =========================================================
+   Tillgänglighet (WCAG 2.2 AA)
+   ========================================================= */
+
+/* Text endast för skärmläsare */
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* Hoppa till innehållet – syns när den får fokus */
+.skip{position:fixed;left:16px;top:-100px;z-index:100;background:var(--ink);color:#fff;padding:.8rem 1.2rem;border-radius:12px;font-weight:600;text-decoration:none;transition:top .2s}
+.skip:focus{top:12px}
+.noscript{margin:0;padding:1rem;background:#FFF4D6;color:#5A3B00;text-align:center;font-weight:500}
+main:focus{outline:none}
+
+/* Fokusmarkering: tydlig ring som syns på både ljus och mörk bakgrund */
+:where(a,button,input,select,textarea,summary,[tabindex]):focus-visible{outline:3px solid var(--ink);outline-offset:3px;box-shadow:0 0 0 6px #fff;border-radius:8px}
+.btn:focus-visible{border-radius:999px}
+/* I mörka block: ljusgrön ring med marinblå kant */
+:is(.band,.summary,.map-info,.social-card,footer,.offer:first-child) :is(a,button,input,select):focus-visible{outline:3px solid #7FD6A0;outline-offset:3px;box-shadow:0 0 0 6px var(--ink)}
+/* Marinblå knappar på ljus bakgrund: vit spalt + marinblå ring */
+.btn:focus-visible,.sticky-cta:focus-visible{outline:3px solid var(--ink);outline-offset:3px;box-shadow:0 0 0 3px #fff}
+:is(.band,.summary,.map-info,.social-card,footer,.offer:first-child) .btn:focus-visible{outline-color:#7FD6A0;box-shadow:0 0 0 3px var(--ink)}
+h1:focus,h2:focus,h3:focus{outline:none}
+h1:focus-visible,h2:focus-visible,h3:focus-visible{outline:3px dashed var(--brand-deep);outline-offset:6px;box-shadow:none}
+
+/* Fokuserat element hamnar aldrig under den fasta menyn */
+html{scroll-padding-top:140px;scroll-padding-bottom:90px}
+
+/* Formulär: obligatoriska fält, fel, platshållare */
+.req{color:#B4344A;font-weight:700}
+.req-note{font-size:.85rem;color:var(--ink-soft);margin:-.4rem 0 0}
+.form-card .req-note{order:-1}
+::placeholder{color:#5F6B7A;opacity:1}
+[aria-invalid="true"]{border-color:#B4344A!important;box-shadow:0 0 0 1px #B4344A;background:#FFF6F7!important}
+.field-err{display:flex;gap:.35rem;align-items:flex-start;color:#A12D40;font-size:.85rem;font-weight:600}
+.field-err::before{content:"!";flex:none;width:18px;height:18px;border-radius:50%;background:#A12D40;color:#fff;display:grid;place-items:center;font-size:.72rem;margin-top:.1rem}
+.ferr ul{margin:.4rem 0 0;padding-left:1.2rem;font-weight:500}
+.pick-set{border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:.5rem;min-width:0}
+.pick-set legend{padding:0;font-size:.85rem;font-weight:600;color:var(--ink-soft);margin-bottom:.5rem}
+.form .svc-pick button[aria-pressed="true"]::before,.chip[aria-pressed="true"]::before,.tabs button[aria-pressed="true"]::before{content:"✓ ";font-weight:700}
+.form label,.pick-set legend{color:#3E4757}
+
+/* Klickytor minst 24×24 px, gärna 44 */
+.chip,.form .svc-pick button,.tabs button,.search-close{min-height:44px}
+.search-close{min-width:44px}
+.check-row input,.consent input{width:22px;height:22px}
+
+/* Länkar i löptext är understrukna så de inte bara skiljs ut med färg */
+.faq a,.search-empty a,.thanks a,.icard p a{text-decoration:underline;text-underline-offset:3px}
+
+/* Pausa rörelse – knapp i remsan och i sidfoten */
+.strip{position:relative;display:flex;align-items:center}
+.strip-track{flex:1}
+.motion-toggle{border:1px solid currentColor;background:transparent;color:inherit;border-radius:999px;padding:.35rem .9rem;font:500 .82rem var(--body);cursor:pointer;min-height:36px;white-space:nowrap}
+.strip-pause{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:#fff;color:var(--ink);border-color:var(--line);box-shadow:0 0 0 8px #fff}
+.motion-toggle[aria-pressed="true"]::before{content:"▶ "}
+.motion-toggle[aria-pressed="false"]::before{content:"❚❚ ";letter-spacing:-.15em;margin-right:.15em}
+.foot-links{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+footer .motion-toggle{color:#fff;border-color:rgba(255,255,255,.4)}
+
+/* När rörelse är pausad (knappen) eller systemet ber om minskad rörelse */
+html.no-motion *,html.no-motion *::before,html.no-motion *::after{animation-duration:.001ms!important;animation-iteration-count:1!important;animation-delay:0ms!important;transition-duration:.001ms!important;transition-delay:0ms!important;scroll-behavior:auto!important}
+html.no-motion .strip-track{animation:none!important}
+html.no-motion .rv{opacity:1;transform:none}
+html.no-motion .hero-art{translate:none}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .strip-track{animation:none!important}
+}
+
+/* Högkontrastläge i Windows */
+@media (forced-colors:active){
+  .btn,.chip,.opt,.tabs button,.svc,.review,.offer,.icard{border:1px solid CanvasText}
+  .opt[aria-pressed="true"],.tabs button[aria-pressed="true"],.chip[aria-pressed="true"]{outline:3px solid Highlight}
+  .progress{display:none}
+}
+
+/* Mobil: lämna plats för den fasta knappen så den inte täcker innehåll */
+@media (max-width:560px){
+  footer{padding-bottom:6rem}
+  .strip-pause{right:8px;font-size:.75rem;padding:.3rem .7rem}
+}
+.form .form-title{font-size:1.5rem}
+.social-card .card-title{font-size:1.4rem;color:#fff}
+
+/* =========================================================
+   Tillgängliga färg-tokens (WCAG 2.2 AA)
+   Varianter av befintliga varumärkesfärger – inga nya nyanser.
+   Uppmätt kontrast står i kommentaren.
+   ========================================================= */
+:root{
+  --border-strong:#7C8597;  /* kant på fält och kontroller: 3,71:1 mot vitt, 3,50:1 mot --mist */
+  --disabled-bg:#E6EAF0;    /* avstängd knapp – bakgrund */
+  --disabled-fg:#4A5565;    /* avstängd knapp – text: 6,26:1 mot --disabled-bg */
+}
+
+/* Formulärfält: synlig kant 3:1 (WCAG 1.4.11) */
+.form input,.form textarea,.form select,.calc input[type=text]{border:1px solid var(--border-strong)}
+.form input:hover,.form textarea:hover,.form select:hover,.calc input[type=text]:hover{border-color:var(--ink)}
+.search-box{border-bottom:1px solid var(--border-strong)}
+
+/* Switch av-läge: spåret syns mot bakgrunden, knoppen syns mot spåret */
+.switch{background:var(--border-strong)}
+.switch[aria-checked="true"]{background:var(--ok)}
+
+/* Avstängda knappar: läsbara men tydligt inaktiva (ingen genomskinlighet) */
+.btn[disabled],.btn[disabled]:hover{opacity:1;background:var(--disabled-bg);color:var(--disabled-fg);box-shadow:inset 0 0 0 1px var(--border-strong);cursor:not-allowed}
+.btn[disabled]::after{display:none}
+
+/* Sekundära knappar: kant som går att se (3:1) – texten bär fortfarande betydelsen */
+.btn-ghost,.btn-ghost-dark,.trial .btn-ghost-dark{box-shadow:inset 0 0 0 1.5px var(--border-strong)}
+.btn-ghost:hover,.btn-ghost-dark:hover{box-shadow:inset 0 0 0 1.5px var(--ink)}
+
+/* Fristående länkar: understrykning som syns (3:1) */
+.link-arrow{border-bottom-color:var(--border-strong)}
+
+/* Priskalkylens steg: inte bara färg – aktuellt steg är fetat, klara steg har bock */
+.calc-progress li::before{background:var(--border-strong)}
+.calc-progress li.done::before,.calc-progress li.on::before{background:var(--ink)}
+.calc-progress li.on{font-weight:700}
+
+/* Statusprick i hero: varumärkets gröna i tillgänglig ton */
+.hero-copy .eyebrow::before{background:var(--ok)}

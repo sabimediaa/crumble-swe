@@ -1,0 +1,36 @@
+/* =========================================================
+   Animationer – bara där de hjälper besökaren:
+   visar att något laddas in, att ett val registrerats eller
+   att man bytt sida. Inga dekorativa loopar.
+   Stängs av med "Pausa rörelse" och vid prefers-reduced-motion.
+   ========================================================= */
+
+/* Innehåll under första vyn tonar in när det syns (kort och diskret) */
+.rv{opacity:0;transform:translateY(12px);transition:opacity .5s ease var(--d,0ms),transform .5s ease var(--d,0ms),box-shadow .2s}
+.rv.in{opacity:1;transform:none}
+
+/* Sidbyte */
+.view.enter{animation:viewIn .3s ease both}
+@keyframes viewIn{from{opacity:0}to{opacity:1}}
+
+/* Hero syns direkt – ingen intoning som fördröjer LCP */
+.view.enter .hero-copy > *,.view.enter .page-hero .wrap > *{animation:none}
+.hero-illus,.page-hero .deco{animation:none}
+
+/* Menyn får skugga när man scrollat */
+.top{transition:box-shadow .2s}
+.top.scrolled{box-shadow:0 1px 0 var(--line),0 8px 24px -18px rgba(13,17,79,.35)}
+.progress{display:none}
+
+/* Hover/aktiv: tydlig men liten respons */
+.rv.in:is(.offer,.reason,.review,.icard,.value,.right,.proj,.svc-row,.svc):hover{transform:translateY(-2px);box-shadow:0 12px 28px -20px rgba(13,17,79,.45);transition-delay:0ms}
+.link-arrow{background:linear-gradient(currentColor,currentColor) 0 100%/0 2px no-repeat;border-bottom-color:var(--line);transition:background-size .25s}
+.link-arrow:hover{background-size:100% 2px}
+.btn{transition:background-color .15s,box-shadow .15s,transform .1s}
+.btn:hover{transform:none}
+.btn:active{transform:translateY(1px)}
+
+/* Feedback i formulär och kalkyl */
+.faq details[open] p{animation:viewIn .25s ease}
+.opt,.check-row,.chip,.tabs button{transition:background-color .15s,border-color .15s,color .15s}
+.thanks .ok{animation:viewIn .3s ease both}
